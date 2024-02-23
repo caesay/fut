@@ -126,6 +126,12 @@ public enum FuId
 	LongTryParse,
 	DoubleTryParse,
 	StringContains,
+	StringCompareTo,
+	StringComparisonEnum,
+	StringComparisonCurrentCulture,
+	StringComparisonCurrentCultureIgnoreCase,
+	StringComparisonOrdinal,
+	StringComparisonOrdinalIgnoreCase,
 	StringEndsWith,
 	StringIndexOf,
 	StringLastIndexOf,
@@ -1542,6 +1548,16 @@ public class FuSystem : FuScope
 		Add(DoubleType);
 		Add(BoolType);
 		StringClass.AddMethod(BoolType, FuId.StringContains, "Contains", false, FuVar.New(StringPtrType, "value"));
+		FuEnum# stringComparisonEnum = NewEnum(false);
+		stringComparisonEnum.IsPublic = true;
+		stringComparisonEnum.Id = FuId.StringComparisonEnum;
+		stringComparisonEnum.Name = "StringComparison";
+		AddEnumValue(stringComparisonEnum, new FuConst { Visibility = FuVisibility.Public, Id = FuId.StringComparisonCurrentCulture, Name = "CurrentCulture", VisitStatus = FuVisitStatus.Done });
+		AddEnumValue(stringComparisonEnum, new FuConst { Visibility = FuVisibility.Public, Id = FuId.StringComparisonCurrentCultureIgnoreCase, Name = "CurrentCultureIgnoreCase", VisitStatus = FuVisitStatus.Done });
+		AddEnumValue(stringComparisonEnum, new FuConst { Visibility = FuVisibility.Public, Id = FuId.StringComparisonOrdinal, Name = "Ordinal", VisitStatus = FuVisitStatus.Done });
+		AddEnumValue(stringComparisonEnum, new FuConst { Visibility = FuVisibility.Public, Id = FuId.StringComparisonOrdinalIgnoreCase, Name = "OrdinalIgnoreCase", VisitStatus = FuVisitStatus.Done });
+		Add(stringComparisonEnum);
+		StringClass.AddMethod(IntType, FuId.StringCompareTo, "CompareTo", false, FuVar.New(StringPtrType, "other"), FuVar.New(stringComparisonEnum, "comparison"));
 		StringClass.AddMethod(BoolType, FuId.StringEndsWith, "EndsWith", false, FuVar.New(StringPtrType, "value"));
 		StringClass.AddMethod(minus1Type, FuId.StringIndexOf, "IndexOf", false, FuVar.New(StringPtrType, "value"));
 		StringClass.AddMethod(minus1Type, FuId.StringLastIndexOf, "LastIndexOf", false, FuVar.New(StringPtrType, "value"));
@@ -1757,4 +1773,5 @@ public class FuProgram : FuScope
 	internal SortedDictionary<string(), List<byte>()>() Resources;
 	internal bool RegexOptionsEnum = false;
 	internal bool JsonValueKindEnum = false;
+	internal bool StringComparisonEnum = false;
 }

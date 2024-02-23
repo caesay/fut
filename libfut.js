@@ -1328,112 +1328,118 @@ export const FuId = {
 	LONG_TRY_PARSE : 63,
 	DOUBLE_TRY_PARSE : 64,
 	STRING_CONTAINS : 65,
-	STRING_ENDS_WITH : 66,
-	STRING_INDEX_OF : 67,
-	STRING_LAST_INDEX_OF : 68,
-	STRING_REPLACE : 69,
-	STRING_STARTS_WITH : 70,
-	STRING_SUBSTRING : 71,
-	STRING_TO_LOWER : 72,
-	STRING_TO_UPPER : 73,
-	ARRAY_BINARY_SEARCH_ALL : 74,
-	ARRAY_BINARY_SEARCH_PART : 75,
-	ARRAY_CONTAINS : 76,
-	ARRAY_COPY_TO : 77,
-	ARRAY_FILL_ALL : 78,
-	ARRAY_FILL_PART : 79,
-	ARRAY_SORT_ALL : 80,
-	ARRAY_SORT_PART : 81,
-	LIST_ADD : 82,
-	LIST_ADD_RANGE : 83,
-	LIST_ALL : 84,
-	LIST_ANY : 85,
-	LIST_CLEAR : 86,
-	LIST_CONTAINS : 87,
-	LIST_COPY_TO : 88,
-	LIST_COUNT : 89,
-	LIST_INDEX_OF : 90,
-	LIST_INSERT : 91,
-	LIST_LAST : 92,
-	LIST_REMOVE_AT : 93,
-	LIST_REMOVE_RANGE : 94,
-	LIST_SORT_ALL : 95,
-	LIST_SORT_PART : 96,
-	QUEUE_CLEAR : 97,
-	QUEUE_COUNT : 98,
-	QUEUE_DEQUEUE : 99,
-	QUEUE_ENQUEUE : 100,
-	QUEUE_PEEK : 101,
-	STACK_CLEAR : 102,
-	STACK_COUNT : 103,
-	STACK_PEEK : 104,
-	STACK_PUSH : 105,
-	STACK_POP : 106,
-	HASH_SET_ADD : 107,
-	HASH_SET_CLEAR : 108,
-	HASH_SET_CONTAINS : 109,
-	HASH_SET_COUNT : 110,
-	HASH_SET_REMOVE : 111,
-	SORTED_SET_ADD : 112,
-	SORTED_SET_CLEAR : 113,
-	SORTED_SET_CONTAINS : 114,
-	SORTED_SET_COUNT : 115,
-	SORTED_SET_REMOVE : 116,
-	DICTIONARY_ADD : 117,
-	DICTIONARY_CLEAR : 118,
-	DICTIONARY_CONTAINS_KEY : 119,
-	DICTIONARY_COUNT : 120,
-	DICTIONARY_REMOVE : 121,
-	SORTED_DICTIONARY_CLEAR : 122,
-	SORTED_DICTIONARY_CONTAINS_KEY : 123,
-	SORTED_DICTIONARY_COUNT : 124,
-	SORTED_DICTIONARY_REMOVE : 125,
-	ORDERED_DICTIONARY_CLEAR : 126,
-	ORDERED_DICTIONARY_CONTAINS_KEY : 127,
-	ORDERED_DICTIONARY_COUNT : 128,
-	ORDERED_DICTIONARY_REMOVE : 129,
-	TEXT_WRITER_WRITE : 130,
-	TEXT_WRITER_WRITE_CHAR : 131,
-	TEXT_WRITER_WRITE_CODE_POINT : 132,
-	TEXT_WRITER_WRITE_LINE : 133,
-	CONSOLE_WRITE : 134,
-	CONSOLE_WRITE_LINE : 135,
-	STRING_WRITER_CLEAR : 136,
-	STRING_WRITER_TO_STRING : 137,
-	CONVERT_TO_BASE64_STRING : 138,
-	U_T_F8_GET_BYTE_COUNT : 139,
-	U_T_F8_GET_BYTES : 140,
-	U_T_F8_GET_STRING : 141,
-	ENVIRONMENT_GET_ENVIRONMENT_VARIABLE : 142,
-	REGEX_COMPILE : 143,
-	REGEX_ESCAPE : 144,
-	REGEX_IS_MATCH_STR : 145,
-	REGEX_IS_MATCH_REGEX : 146,
-	MATCH_FIND_STR : 147,
-	MATCH_FIND_REGEX : 148,
-	MATCH_GET_CAPTURE : 149,
-	JSON_ELEMENT_PARSE : 150,
-	JSON_ELEMENT_TRY_PARSE : 151,
-	JSON_ELEMENT_GET_OBJECT : 152,
-	JSON_ELEMENT_GET_ARRAY : 153,
-	JSON_ELEMENT_GET_STRING : 154,
-	JSON_ELEMENT_GET_DOUBLE : 155,
-	JSON_ELEMENT_GET_BOOLEAN : 156,
-	MATH_METHOD : 157,
-	MATH_ABS : 158,
-	MATH_CEILING : 159,
-	MATH_CLAMP : 160,
-	MATH_FUSED_MULTIPLY_ADD : 161,
-	MATH_IS_FINITE : 162,
-	MATH_IS_INFINITY : 163,
-	MATH_IS_NA_N : 164,
-	MATH_LOG2 : 165,
-	MATH_MAX_INT : 166,
-	MATH_MAX_DOUBLE : 167,
-	MATH_MIN_INT : 168,
-	MATH_MIN_DOUBLE : 169,
-	MATH_ROUND : 170,
-	MATH_TRUNCATE : 171
+	STRING_COMPARE_TO : 66,
+	STRING_COMPARISON_ENUM : 67,
+	STRING_COMPARISON_CURRENT_CULTURE : 68,
+	STRING_COMPARISON_CURRENT_CULTURE_IGNORE_CASE : 69,
+	STRING_COMPARISON_ORDINAL : 70,
+	STRING_COMPARISON_ORDINAL_IGNORE_CASE : 71,
+	STRING_ENDS_WITH : 72,
+	STRING_INDEX_OF : 73,
+	STRING_LAST_INDEX_OF : 74,
+	STRING_REPLACE : 75,
+	STRING_STARTS_WITH : 76,
+	STRING_SUBSTRING : 77,
+	STRING_TO_LOWER : 78,
+	STRING_TO_UPPER : 79,
+	ARRAY_BINARY_SEARCH_ALL : 80,
+	ARRAY_BINARY_SEARCH_PART : 81,
+	ARRAY_CONTAINS : 82,
+	ARRAY_COPY_TO : 83,
+	ARRAY_FILL_ALL : 84,
+	ARRAY_FILL_PART : 85,
+	ARRAY_SORT_ALL : 86,
+	ARRAY_SORT_PART : 87,
+	LIST_ADD : 88,
+	LIST_ADD_RANGE : 89,
+	LIST_ALL : 90,
+	LIST_ANY : 91,
+	LIST_CLEAR : 92,
+	LIST_CONTAINS : 93,
+	LIST_COPY_TO : 94,
+	LIST_COUNT : 95,
+	LIST_INDEX_OF : 96,
+	LIST_INSERT : 97,
+	LIST_LAST : 98,
+	LIST_REMOVE_AT : 99,
+	LIST_REMOVE_RANGE : 100,
+	LIST_SORT_ALL : 101,
+	LIST_SORT_PART : 102,
+	QUEUE_CLEAR : 103,
+	QUEUE_COUNT : 104,
+	QUEUE_DEQUEUE : 105,
+	QUEUE_ENQUEUE : 106,
+	QUEUE_PEEK : 107,
+	STACK_CLEAR : 108,
+	STACK_COUNT : 109,
+	STACK_PEEK : 110,
+	STACK_PUSH : 111,
+	STACK_POP : 112,
+	HASH_SET_ADD : 113,
+	HASH_SET_CLEAR : 114,
+	HASH_SET_CONTAINS : 115,
+	HASH_SET_COUNT : 116,
+	HASH_SET_REMOVE : 117,
+	SORTED_SET_ADD : 118,
+	SORTED_SET_CLEAR : 119,
+	SORTED_SET_CONTAINS : 120,
+	SORTED_SET_COUNT : 121,
+	SORTED_SET_REMOVE : 122,
+	DICTIONARY_ADD : 123,
+	DICTIONARY_CLEAR : 124,
+	DICTIONARY_CONTAINS_KEY : 125,
+	DICTIONARY_COUNT : 126,
+	DICTIONARY_REMOVE : 127,
+	SORTED_DICTIONARY_CLEAR : 128,
+	SORTED_DICTIONARY_CONTAINS_KEY : 129,
+	SORTED_DICTIONARY_COUNT : 130,
+	SORTED_DICTIONARY_REMOVE : 131,
+	ORDERED_DICTIONARY_CLEAR : 132,
+	ORDERED_DICTIONARY_CONTAINS_KEY : 133,
+	ORDERED_DICTIONARY_COUNT : 134,
+	ORDERED_DICTIONARY_REMOVE : 135,
+	TEXT_WRITER_WRITE : 136,
+	TEXT_WRITER_WRITE_CHAR : 137,
+	TEXT_WRITER_WRITE_CODE_POINT : 138,
+	TEXT_WRITER_WRITE_LINE : 139,
+	CONSOLE_WRITE : 140,
+	CONSOLE_WRITE_LINE : 141,
+	STRING_WRITER_CLEAR : 142,
+	STRING_WRITER_TO_STRING : 143,
+	CONVERT_TO_BASE64_STRING : 144,
+	U_T_F8_GET_BYTE_COUNT : 145,
+	U_T_F8_GET_BYTES : 146,
+	U_T_F8_GET_STRING : 147,
+	ENVIRONMENT_GET_ENVIRONMENT_VARIABLE : 148,
+	REGEX_COMPILE : 149,
+	REGEX_ESCAPE : 150,
+	REGEX_IS_MATCH_STR : 151,
+	REGEX_IS_MATCH_REGEX : 152,
+	MATCH_FIND_STR : 153,
+	MATCH_FIND_REGEX : 154,
+	MATCH_GET_CAPTURE : 155,
+	JSON_ELEMENT_PARSE : 156,
+	JSON_ELEMENT_TRY_PARSE : 157,
+	JSON_ELEMENT_GET_OBJECT : 158,
+	JSON_ELEMENT_GET_ARRAY : 159,
+	JSON_ELEMENT_GET_STRING : 160,
+	JSON_ELEMENT_GET_DOUBLE : 161,
+	JSON_ELEMENT_GET_BOOLEAN : 162,
+	MATH_METHOD : 163,
+	MATH_ABS : 164,
+	MATH_CEILING : 165,
+	MATH_CLAMP : 166,
+	MATH_FUSED_MULTIPLY_ADD : 167,
+	MATH_IS_FINITE : 168,
+	MATH_IS_INFINITY : 169,
+	MATH_IS_NA_N : 170,
+	MATH_LOG2 : 171,
+	MATH_MAX_INT : 172,
+	MATH_MAX_DOUBLE : 173,
+	MATH_MIN_INT : 174,
+	MATH_MIN_DOUBLE : 175,
+	MATH_ROUND : 176,
+	MATH_TRUNCATE : 177
 }
 
 class FuDocInline
@@ -3177,6 +3183,16 @@ export class FuSystem extends FuScope
 		this.add(this.doubleType);
 		this.add(this.boolType);
 		this.#stringClass.addMethod(this.boolType, FuId.STRING_CONTAINS, "Contains", false, FuVar.new(this.stringPtrType, "value"));
+		let stringComparisonEnum = this.newEnum(false);
+		stringComparisonEnum.isPublic = true;
+		stringComparisonEnum.id = FuId.STRING_COMPARISON_ENUM;
+		stringComparisonEnum.name = "StringComparison";
+		FuSystem.#addEnumValue(stringComparisonEnum, Object.assign(new FuConst(), { visibility: FuVisibility.PUBLIC, id: FuId.STRING_COMPARISON_CURRENT_CULTURE, name: "CurrentCulture", visitStatus: FuVisitStatus.DONE }));
+		FuSystem.#addEnumValue(stringComparisonEnum, Object.assign(new FuConst(), { visibility: FuVisibility.PUBLIC, id: FuId.STRING_COMPARISON_CURRENT_CULTURE_IGNORE_CASE, name: "CurrentCultureIgnoreCase", visitStatus: FuVisitStatus.DONE }));
+		FuSystem.#addEnumValue(stringComparisonEnum, Object.assign(new FuConst(), { visibility: FuVisibility.PUBLIC, id: FuId.STRING_COMPARISON_ORDINAL, name: "Ordinal", visitStatus: FuVisitStatus.DONE }));
+		FuSystem.#addEnumValue(stringComparisonEnum, Object.assign(new FuConst(), { visibility: FuVisibility.PUBLIC, id: FuId.STRING_COMPARISON_ORDINAL_IGNORE_CASE, name: "OrdinalIgnoreCase", visitStatus: FuVisitStatus.DONE }));
+		this.add(stringComparisonEnum);
+		this.#stringClass.addMethod(this.intType, FuId.STRING_COMPARE_TO, "CompareTo", false, FuVar.new(this.stringPtrType, "other"), FuVar.new(stringComparisonEnum, "comparison"));
 		this.#stringClass.addMethod(this.boolType, FuId.STRING_ENDS_WITH, "EndsWith", false, FuVar.new(this.stringPtrType, "value"));
 		this.#stringClass.addMethod(minus1Type, FuId.STRING_INDEX_OF, "IndexOf", false, FuVar.new(this.stringPtrType, "value"));
 		this.#stringClass.addMethod(minus1Type, FuId.STRING_LAST_INDEX_OF, "LastIndexOf", false, FuVar.new(this.stringPtrType, "value"));
@@ -3476,6 +3492,7 @@ export class FuProgram extends FuScope
 	resources = {};
 	regexOptionsEnum = false;
 	jsonValueKindEnum = false;
+	stringComparisonEnum = false;
 }
 
 export class FuParser extends FuLexer
@@ -4753,6 +4770,8 @@ export class FuSema
 					this.program.regexOptionsEnum = true;
 				else if (symbol.symbol.id == FuId.JSON_VALUE_KIND_ENUM)
 					this.program.jsonValueKindEnum = true;
+				else if (symbol.symbol.id == FuId.STRING_COMPARISON_ENUM)
+					this.program.stringComparisonEnum = true;
 			}
 			return resolved;
 		}
@@ -16435,6 +16454,16 @@ export class GenCs extends GenTyped
 			this.include("System.Text");
 			this.write("Encoding.UTF8.GetString");
 			this.writeArgsInParentheses(method, args);
+			break;
+		case FuId.STRING_COMPARE_TO:
+			this.include("System");
+			this.write("String.Compare(");
+			obj.accept(this, FuPriority.ARGUMENT);
+			this.write(", ");
+			args[0].accept(this, FuPriority.ARGUMENT);
+			this.write(", ");
+			args[1].accept(this, FuPriority.ARGUMENT);
+			this.writeChar(41);
 			break;
 		case FuId.REGEX_COMPILE:
 			this.include("System.Text.RegularExpressions");

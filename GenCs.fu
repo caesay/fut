@@ -628,6 +628,16 @@ public class GenCs : GenTyped
 			Write("Encoding.UTF8.GetString");
 			WriteArgsInParentheses(method, args);
 			break;
+		case FuId.StringCompareTo:
+			Include("System");
+			Write("String.Compare(");
+			obj.Accept(this, FuPriority.Argument);
+			Write(", ");
+			args[0].Accept(this, FuPriority.Argument);
+			Write(", ");
+			args[1].Accept(this, FuPriority.Argument);
+			WriteChar(')');
+			break;
 		case FuId.RegexCompile:
 			Include("System.Text.RegularExpressions");
 			Write("new Regex");

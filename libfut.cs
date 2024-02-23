@@ -1345,6 +1345,12 @@ namespace Fusion
 		LongTryParse,
 		DoubleTryParse,
 		StringContains,
+		StringCompareTo,
+		StringComparisonEnum,
+		StringComparisonCurrentCulture,
+		StringComparisonCurrentCultureIgnoreCase,
+		StringComparisonOrdinal,
+		StringComparisonOrdinalIgnoreCase,
 		StringEndsWith,
 		StringIndexOf,
 		StringLastIndexOf,
@@ -3018,6 +3024,16 @@ namespace Fusion
 			Add(this.DoubleType);
 			Add(this.BoolType);
 			this.StringClass.AddMethod(this.BoolType, FuId.StringContains, "Contains", false, FuVar.New(this.StringPtrType, "value"));
+			FuEnum stringComparisonEnum = NewEnum(false);
+			stringComparisonEnum.IsPublic = true;
+			stringComparisonEnum.Id = FuId.StringComparisonEnum;
+			stringComparisonEnum.Name = "StringComparison";
+			AddEnumValue(stringComparisonEnum, new FuConst { Visibility = FuVisibility.Public, Id = FuId.StringComparisonCurrentCulture, Name = "CurrentCulture", VisitStatus = FuVisitStatus.Done });
+			AddEnumValue(stringComparisonEnum, new FuConst { Visibility = FuVisibility.Public, Id = FuId.StringComparisonCurrentCultureIgnoreCase, Name = "CurrentCultureIgnoreCase", VisitStatus = FuVisitStatus.Done });
+			AddEnumValue(stringComparisonEnum, new FuConst { Visibility = FuVisibility.Public, Id = FuId.StringComparisonOrdinal, Name = "Ordinal", VisitStatus = FuVisitStatus.Done });
+			AddEnumValue(stringComparisonEnum, new FuConst { Visibility = FuVisibility.Public, Id = FuId.StringComparisonOrdinalIgnoreCase, Name = "OrdinalIgnoreCase", VisitStatus = FuVisitStatus.Done });
+			Add(stringComparisonEnum);
+			this.StringClass.AddMethod(this.IntType, FuId.StringCompareTo, "CompareTo", false, FuVar.New(this.StringPtrType, "other"), FuVar.New(stringComparisonEnum, "comparison"));
 			this.StringClass.AddMethod(this.BoolType, FuId.StringEndsWith, "EndsWith", false, FuVar.New(this.StringPtrType, "value"));
 			this.StringClass.AddMethod(minus1Type, FuId.StringIndexOf, "IndexOf", false, FuVar.New(this.StringPtrType, "value"));
 			this.StringClass.AddMethod(minus1Type, FuId.StringLastIndexOf, "LastIndexOf", false, FuVar.New(this.StringPtrType, "value"));
@@ -3335,6 +3351,8 @@ namespace Fusion
 		internal bool RegexOptionsEnum = false;
 
 		internal bool JsonValueKindEnum = false;
+
+		internal bool StringComparisonEnum = false;
 	}
 
 	public class FuParser : FuLexer
@@ -4602,6 +4620,8 @@ namespace Fusion
 						this.Program.RegexOptionsEnum = true;
 					else if (symbol.Symbol.Id == FuId.JsonValueKindEnum)
 						this.Program.JsonValueKindEnum = true;
+					else if (symbol.Symbol.Id == FuId.StringComparisonEnum)
+						this.Program.StringComparisonEnum = true;
 				}
 				return resolved;
 			}
@@ -15969,6 +15989,16 @@ namespace Fusion
 				Include("System.Text");
 				Write("Encoding.UTF8.GetString");
 				WriteArgsInParentheses(method, args);
+				break;
+			case FuId.StringCompareTo:
+				Include("System");
+				Write("String.Compare(");
+				obj.Accept(this, FuPriority.Argument);
+				Write(", ");
+				args[0].Accept(this, FuPriority.Argument);
+				Write(", ");
+				args[1].Accept(this, FuPriority.Argument);
+				WriteChar(')');
 				break;
 			case FuId.RegexCompile:
 				Include("System.Text.RegularExpressions");

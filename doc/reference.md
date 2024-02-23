@@ -295,6 +295,16 @@ Possible string operations include the following:
   The two comparison operators can also be used to check nullable references
   for the `null` value - use `str == null` or `str != null`.
   It is not legal to compare two string references if any of them is `null`.
+* `str.CompareTo(otherStr, StringComparison)` Is a more sophisticated compare 
+  (when compared to `==` / `!=`),
+  it returns an integer allowing you to sort string keys. If the function returns `0`,
+  the strings are equal. Additionally using the `StringComparison` enum you can choose
+  to ignore case or ignore current culture rules with Ordinal compares.
+  `StringComparison` supports the following values:
+  - `StringComparison.CurrentCulture`
+  - `StringComparison.CurrentCultureIgnoreCase`
+  - `StringComparison.Ordinal`
+  - `StringComparison.OrdinalIgnoreCase`
 * Length retrieval with `str.Length`.
 * _Code unit_ retrieval with `str[index]`.
 * `str1.StartsWith(str2)`, `str1.EndsWith(str2)` and `str1.Contains(str2)`

@@ -254,6 +254,12 @@ enum class FuId
 	longTryParse,
 	doubleTryParse,
 	stringContains,
+	stringCompareTo,
+	stringComparisonEnum,
+	stringComparisonCurrentCulture,
+	stringComparisonCurrentCultureIgnoreCase,
+	stringComparisonOrdinal,
+	stringComparisonOrdinalIgnoreCase,
 	stringEndsWith,
 	stringIndexOf,
 	stringLastIndexOf,
@@ -1511,6 +1517,7 @@ public:
 	std::map<std::string, std::vector<uint8_t>> resources;
 	bool regexOptionsEnum = false;
 	bool jsonValueKindEnum = false;
+	bool stringComparisonEnum = false;
 };
 
 class FuParser : public FuLexer
